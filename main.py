@@ -7,7 +7,6 @@ print(list(sorted(sys.modules.keys())))
 from qtpy.QtCore import Qt
 from qtpy.QtWidgets import QApplication, QWidget, QLabel, QMainWindow, QMenuBar, QMenu, QStatusBar, QSizePolicy
 from PySide6QtAds import CDockManager, CDockWidget, TopDockWidgetArea
-# from PySide6QtAds.PySide6QtAds.ads import CDockManager, CDockWidget, TopDockWidgetArea
 for module_name in list(sorted(sys.modules.keys())):
     module = sys.modules[module_name]
     if hasattr(module, '__path__'):

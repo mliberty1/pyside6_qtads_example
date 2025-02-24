@@ -38,7 +38,6 @@ def nuitka():
             '--python-flag=isolated',
             '--msvc=latest',  # for Windows
             '--windows-console-mode=force',  # todo remove
-            '--embed-debug-qt-resources',
             '--report=nuitka_report.xml',
             '--output-filename=pyside6_qtads_example',
             'main.py',
