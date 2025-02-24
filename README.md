@@ -16,9 +16,9 @@ The problem exists with:
 
 1. Install Python 3.13.2 for Windows 11.
 2. Open PowerShell and type:
-```
-python -m venv c:\\venv\\nuitka
-c:\\venv\nuitka\Scripts\\Activate.ps1
+```PowerShell
+python -m venv c:\venv\nuitka
+c:\venv\nuitka\Scripts\Activate.ps1
 python -m pip install nuitka PySide6-QtAds qtpy
 python main.py
 ```
@@ -27,9 +27,9 @@ Confirm that the window appears.
 
 Now build and test using Nuitka:
 
-```
+```PowerShell
 python nuitka_build.py
-.\\main.dist\\pyside6_qtads_example.exe
+.\main.dist\pyside6_qtads_example.exe
 ```
 
 I see this:
@@ -50,11 +50,11 @@ SystemError: <built-in method exec_module of type object at 0x00007FF7AD726C20> 
 (nuitka) PS C:\repos\Jetperch\pyside6_qtads_example>
 ```
 
-Can "fix" this by renaming `c:\\venv\\nuitka\\lib\\site-package\\PySide6-QtAds` folder to MyPySide6-QtAds and
+Can "fix" this by renaming `c:\venv\nuitka\lib\site-package\PySide6-QtAds` folder to MyPySide6-QtAds and
 changing main.py line 9 to:
 
 ```
 from MyPySide6QtAds import CDockManager, CDockWidget, TopDockWidgetArea
 ```
 
-I think that the presence of both PySide6QtAds.\_\_init\_\_.py and PySide6QtAds.PySide6QtAds.pyd is confusing the Nuitka import system.
+I think that the presence of both `PySide6QtAds.\_\_init\_\_.py` and `PySide6QtAds.PySide6QtAds.pyd` is confusing the Nuitka import system.
