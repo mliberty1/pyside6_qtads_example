@@ -57,4 +57,4 @@ changing main.py line 9 to:
 from MyPySide6QtAds import CDockManager, CDockWidget, TopDockWidgetArea
 ```
 
-I think that the presence of both `PySide6QtAds.\_\_init\_\_.py` and `PySide6QtAds.PySide6QtAds.pyd` is confusing the Nuitka import system.
+I think that the presence of both `PySide6QtAds.__init__.py` and `PySide6QtAds.PySide6QtAds.pyd` is confusing the Nuitka import system.
